@@ -4,22 +4,22 @@
       <icon-button
         type="double-left"
         :disabled="isDisabledArrows('last-year')"
-        @click="handleIconDoubleLeftClick"
+        @click.stop="handleIconDoubleLeftClick"
       ></icon-button>
       <icon-button
         type="left"
         :disabled="isDisabledArrows('last-month')"
-        @click="handleIconLeftClick"
+        @click.stop="handleIconLeftClick"
       ></icon-button>
       <icon-button
         type="double-right"
         :disabled="isDisabledArrows('next-year')"
-        @click="handleIconDoubleRightClick"
+        @click.stop="handleIconDoubleRightClick"
       ></icon-button>
       <icon-button
         type="right"
         :disabled="isDisabledArrows('next-month')"
-        @click="handleIconRightClick"
+        @click.stop="handleIconRightClick"
       ></icon-button>
       <span :class="`${prefixClass}-calendar-header-label`">
         <button
@@ -29,7 +29,7 @@
           :class="
             `${prefixClass}-btn ${prefixClass}-btn-text ${prefixClass}-btn-current-${item.panel}`
           "
-          @click="handlePanelChange(item.panel)"
+          @click.stop="handlePanelChange(item.panel)"
         >
           {{ item.label }}
         </button>
@@ -43,7 +43,7 @@
             <th v-for="day in days" :key="day">{{ day }}</th>
           </tr>
         </thead>
-        <tbody @click="handleCellClick">
+        <tbody @click.stop="handleCellClick">
           <tr
             v-for="(row, i) in dates"
             :key="i"

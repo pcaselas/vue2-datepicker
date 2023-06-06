@@ -5,7 +5,7 @@
         :class="`${prefixClass}-time-list`"
         :data-type="col.type"
         :data-index="i"
-        @click="handleSelect"
+        @click.stop="handleSelect"
       >
         <li
           v-for="(item, j) in col.list"

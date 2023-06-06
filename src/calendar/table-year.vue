@@ -4,12 +4,12 @@
       <icon-button
         type="double-left"
         :disabled="isDisabledArrows('last-decade')"
-        @click="handleIconDoubleLeftClick"
+        @click.stop="handleIconDoubleLeftClick"
       ></icon-button>
       <icon-button
         type="double-right"
         :disabled="isDisabledArrows('next-decade')"
-        @click="handleIconDoubleRightClick"
+        @click.stop="handleIconDoubleRightClick"
       ></icon-button>
       <span :class="`${prefixClass}-calendar-header-label`">
         <span>{{ firstYear }}</span>
@@ -18,7 +18,7 @@
       </span>
     </div>
     <div :class="`${prefixClass}-calendar-content`">
-      <table :class="`${prefixClass}-table ${prefixClass}-table-year`" @click="handleClick">
+      <table :class="`${prefixClass}-table ${prefixClass}-table-year`" @click.stop="handleClick">
         <tr v-for="(row, i) in years" :key="i">
           <td
             v-for="(cell, j) in row"

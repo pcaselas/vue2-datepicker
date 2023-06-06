@@ -4,25 +4,25 @@
       <icon-button
         type="double-left"
         :disabled="isDisabledArrows('last-year')"
-        @click="handleIconDoubleLeftClick"
+        @click.stop="handleIconDoubleLeftClick"
       ></icon-button>
       <icon-button
         type="double-right"
         :disabled="isDisabledArrows('next-year')"
-        @click="handleIconDoubleRightClick"
+        @click.stop="handleIconDoubleRightClick"
       ></icon-button>
       <span :class="`${prefixClass}-calendar-header-label`">
         <button
           type="button"
           :class="`${prefixClass}-btn ${prefixClass}-btn-text`"
-          @click="handlePanelChange"
+          @click.stop="handlePanelChange"
         >
           {{ calendarYear }}
         </button>
       </span>
     </div>
     <div :class="`${prefixClass}-calendar-content`">
-      <table :class="`${prefixClass}-table ${prefixClass}-table-month`" @click="handleClick">
+      <table :class="`${prefixClass}-table ${prefixClass}-table-month`" @click.stop="handleClick">
         <tr v-for="(row, i) in months" :key="i">
           <td
             v-for="(cell, j) in row"

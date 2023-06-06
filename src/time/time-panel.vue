@@ -4,7 +4,7 @@
       <button
         type="button"
         :class="`${prefixClass}-btn ${prefixClass}-btn-text ${prefixClass}-time-header-title`"
-        @click="handleClickTitle"
+        @click.stop="handleClickTitle"
       >
         {{ title }}
       </button>

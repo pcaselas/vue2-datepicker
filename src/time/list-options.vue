@@ -4,7 +4,7 @@
       v-for="item in list"
       :key="item.value"
       :class="[`${prefixClass}-time-option`, getClasses(item.value)]"
-      @click="handleSelect(item.value)"
+      @click.stop="handleSelect(item.value)"
     >
       {{ item.text }}
     </div>
